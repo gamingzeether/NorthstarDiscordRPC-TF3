@@ -121,24 +121,24 @@ fn on_presence_updated(
             activity.party = None;
             activity.details = "".to_string();
             activity.state = "Loading...".to_string();
-            activity.large_image = Some("northstar".to_string());
-            activity.large_text = Some("Titanfall 2 + Northstar".to_string());
+            activity.large_image = Some("tf3".to_string());
+            activity.large_text = Some("Titanfall 3".to_string());
             activity.end = None;
         }
         GameState::MainMenu => {
             activity.party = None;
             activity.details = "Main Menu".to_string();
             activity.state = "On Main Menu".to_string();
-            activity.large_image = Some("northstar".to_string());
-            activity.large_text = Some("Titanfall 2 + Northstar".to_string());
+            activity.large_image = Some("tf3".to_string());
+            activity.large_text = Some("Titanfall 3".to_string());
             activity.end = None;
         }
         GameState::Lobby => {
             activity.party = None;
             activity.details = "Lobby".to_string();
             activity.state = "In the Lobby".to_string();
-            activity.large_image = Some("northstar".to_string());
-            activity.large_text = Some("Titanfall 2 + Northstar".to_string());
+            activity.large_image = Some("tf3".to_string());
+            activity.large_text = Some("Titanfall 3".to_string());
             activity.end = None;
         }
         GameState::InGame => {
@@ -152,8 +152,8 @@ fn on_presence_updated(
             activity.state = map_displayname.clone();
             activity.large_image = Some(cl_presence.map.clone());
             activity.large_text = Some(map_displayname);
-            activity.small_image = Some("northstar".to_string());
-            activity.small_text = Some("Titanfall 2 + Northstar".to_string());
+            activity.small_image = Some("tf3".to_string());
+            activity.small_text = Some("Titanfall 3".to_string());
             if cl_presence.playlist == "campaign" {
                 activity.party = None;
                 activity.end = None;

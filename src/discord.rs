@@ -13,8 +13,8 @@ use rrplug::prelude::*;
 
 use crate::exports::PLUGIN;
 
-/// the discord app's id, taken from older v1 discord rpc
-const APP_ID: i64 = 941428101429231617;
+/// the discord app's id
+const APP_ID: i64 = 1168009340838486036;
 
 /// struct to hold everything required to run discord rpc
 pub struct Client {
