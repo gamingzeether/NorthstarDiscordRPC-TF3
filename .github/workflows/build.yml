@@ -2,11 +2,20 @@ name: CI
 on: [push, pull_request]
 
 jobs:
+  # Ensure correct Rust code formatting
+  formatting:
+    name: format-check
+    runs-on: windows-2022
+    steps:
+      - uses: actions/checkout@v4
+      - name: Format check
+        run: cargo fmt --all -- --check
+
   build:
     runs-on: windows-2022
     steps:
       - name: Checkout
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
       - name: Build
         run: |
           cargo build --release --verbose
@@ -15,7 +24,7 @@ jobs:
         shell: bash
         run: echo commit=$(git rev-parse --short HEAD) >> $GITHUB_OUTPUT
       - name: Upload Build Artifact
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v4
         with:
           name: NorthstarDiscordRPC-${{ steps.extract.outputs.commit }}
           path: |

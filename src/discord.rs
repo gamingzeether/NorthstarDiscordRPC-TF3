@@ -24,7 +24,7 @@ pub struct Client {
 }
 
 /// discord rpc update function
-/// 
+///
 ///  doesn't run on the titanfall 2 thread since it needs async
 pub async fn async_main() {
     let activity = &PLUGIN.wait().activity;
@@ -59,7 +59,8 @@ pub async fn async_main() {
                 large_text: data.large_text,
                 small_image: data.small_image,
                 small_text: data.small_text,
-            });
+            })
+            .secrets(data.secrets);
 
         if let Some(start) = data.start {
             activity_builder = activity_builder.start_timestamp(if start == 0 { 1 } else { start });
